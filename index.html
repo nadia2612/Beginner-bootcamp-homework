@@ -1,34 +1,86 @@
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Mocha Tests</title>
     <link href="lib/mocha.css" rel="stylesheet" />
-</head>
-<body>
+  </head>
+  <body>
+    <!-- 👍 YOUR HTML HERE 👍 -->
+    <img
+      id="inn"
+      onclick="rest(hero)"
+      src="https://cdn4.iconfinder.com/data/icons/emoji-18/61/24-512.png"
+    />
+    <img
+      id="dagger"
+      onclick="pickUpItem(hero, ({type: 'dagger', damage: 2}))"
+      src="https://i.pinimg.com/originals/1f/9a/11/1f9a11e669b5e39bf5774d51ffe2f330.jpg"
+    />
+    <img
+      id="bag"
+      onclick="equipWeapon(hero)"
+      src="https://s.pngix.com/pngfile/s/200-2002048_transparent-money-bag-sack-transparent-background-hd-png.png"
+    />
 
+    <div id="stats">
+      <table>
+        <tr>
+          <td>
+            <img
+              src="https://game-icons.net/icons/ffffff/000000/1x1/zeromancer/heart-plus.svg"
+            />
+          </td>
+          <td>Name</td>
+          <td id="1">value</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="https://game-icons.net/icons/ffffff/000000/1x1/zeromancer/heart-plus.svg"
+            >
+          </td>
+          <td>Health</td>
+          <td id="2">value</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="https://game-icons.net/icons/ffffff/000000/1x1/zeromancer/heart-plus.svg"
+            >
+          </td>
+          <td>Weapon Type</td>
+          <td id="3">value</td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/sharp-axe.svg"
+            >
+          </td>
+          <td>Weapon Damage</td>
+          <td id="4">value</td>
+        </tr>
+      </table>
+    </div>
 
-  <!-- 👍 YOUR HTML HERE 👍 -->
-<img id="inn" onclick="rest(hero)" src="https://cdn4.iconfinder.com/data/icons/emoji-18/61/24-512.png">
-<img id="dagger" onclick="pickUpItem(hero, ({type: 'dagger', damage: 2}))" src="https://i.pinimg.com/originals/1f/9a/11/1f9a11e669b5e39bf5774d51ffe2f330.jpg">
-<img id="bag" onclick="equipWeapon(hero)" src="https://s.pngix.com/pngfile/s/200-2002048_transparent-money-bag-sack-transparent-background-hd-png.png">
+    <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
+    <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 
+    <div id="mocha">
+      <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    </div>
 
-  <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
-  <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
-
-  <div id="mocha">
-  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
-  </div>
-
-  <script src="lib/chai.js"></script>
-  <script src="lib/mocha.js"></script>
-  <script src="lib/sinon.js"></script>
-  <script>mocha.setup('bdd')</script>
-  <script src="YOUR_JAVASCRIPT_HERE.js"></script>
-  <script src="lib/game_logic.test.js"></script>
-  <script>
-  mocha.checkLeaks(); mocha.run();
-  </script>
-
-</body>
+    <script src="lib/chai.js"></script>
+    <script src="lib/mocha.js"></script>
+    <script src="lib/sinon.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+    <script src="YOUR_JAVASCRIPT_HERE.js"></script>
+    <script src="lib/game_logic.test.js"></script>
+    <script>
+      mocha.checkLeaks();
+      mocha.run();
+    </script>
+  </body>
 </html>
