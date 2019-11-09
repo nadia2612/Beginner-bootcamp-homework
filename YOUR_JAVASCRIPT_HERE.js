@@ -23,8 +23,8 @@ const displayStats = person => {
     const weaponTypeValue = document.getElementById("t3");
     weaponTypeValue.innerHTML = person.weapon.type;
     console.log(person.weapon.type);
-    const weapoonDamegeValue = document.getElementById("t4");
-    weapoonDamegeValue.innerHTML = person.weapon.damage;
+    const weaponDamageValue = document.getElementById("t4");
+    weaponDamageValue.innerHTML = person.weapon.damage;
     console.log(person.weapon.damage);
   }
 };
