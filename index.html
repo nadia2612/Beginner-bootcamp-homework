@@ -1,67 +1,91 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mocha Tests</title>
     <link href="lib/mocha.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../index.css" />
   </head>
   <body>
     <!-- 👍 YOUR HTML HERE 👍 -->
-    <img
-      id="inn"
-      onclick="rest(hero)"
-      src="https://cdn4.iconfinder.com/data/icons/emoji-18/61/24-512.png"
-    />
-    <img
-      id="dagger"
-      onclick="pickUpItem(hero, ({type: 'dagger', damage: 2}))"
-      src="https://i.pinimg.com/originals/1f/9a/11/1f9a11e669b5e39bf5774d51ffe2f330.jpg"
-    />
-    <img
-      id="bag"
-      onclick="equipWeapon(hero)"
-      src="https://s.pngix.com/pngfile/s/200-2002048_transparent-money-bag-sack-transparent-background-hd-png.png"
-    />
+    <main>
+      <section class="comment">
+        <h3>Your hero name:</h3>
+      </section>
+      <form onsubmit="heroName(hero); return false">
+        <div class="formSection">
+          <label for="name" placeholder="Your hero name"></label>
+          <input type="text" id="name" />
+        </div>
+        <div class="button">
+          <button type="default">Submit</button>
+        </div>
+      </form>
 
-    <div id="stats">
-      <table>
-        <tr>
-          <td>
-            <img
-              src="https://game-icons.net/icons/ffffff/000000/1x1/zeromancer/heart-plus.svg"
-            />
-          </td>
-          <td>Name</td>
-          <td id="1">value</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="https://game-icons.net/icons/ffffff/000000/1x1/zeromancer/heart-plus.svg"
-            >
-          </td>
-          <td>Health</td>
-          <td id="2">value</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="https://game-icons.net/icons/ffffff/000000/1x1/zeromancer/heart-plus.svg"
-            >
-          </td>
-          <td>Weapon Type</td>
-          <td id="3">value</td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/sharp-axe.svg"
-            >
-          </td>
-          <td>Weapon Damage</td>
-          <td id="4">value</td>
-        </tr>
-      </table>
-    </div>
+      <section id="game">
+        <img
+          id="inn"
+          onclick="rest(hero)"
+          src="/img/IMGBIN_deadpool-spider-man-youtube-drawing-cartoon-png_AKivLjX2.png"
+        />
+        <img
+          id="dagger"
+          onclick="pickUpItem(hero, ({type: 'dagger', damage: 2}))"
+          src="/img/IMGBIN_captain-america-deadpool-png_YjGGtC3X.png"
+        />
+
+        <img
+          id="bag"
+          onclick="equipWeapon(hero)"
+          src="/img/IMGBIN_deathstroke-deadpool-spider-man-chibi-drawing-png_sCyyhC50.png"
+        />
+      </section>
+
+      <div id="stats">
+        <table>
+          <tr>
+            <td>
+              <img
+                class="table-icon"
+                src="https://game-icons.net/icons/ffffff/000000/1x1/cathelineau/swordman.svg"
+              />
+            </td>
+            <td>Name</td>
+            <td id="t1">value</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="table-icon"
+                src="https://game-icons.net/icons/ffffff/000000/1x1/zeromancer/heart-plus.svg"
+              />
+            </td>
+            <td>Health</td>
+            <td id="t2">value</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="table-icon"
+                src="https://game-icons.net/icons/ffffff/000000/1x1/delapouite/sharp-axe.svg"
+              />
+            </td>
+            <td>Weapon Type</td>
+            <td id="t3">value</td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="table-icon"
+                src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/pierced-body.svg"
+              />
+            </td>
+            <td>Weapon Damage</td>
+            <td id="t4">value</td>
+          </tr>
+        </table>
+      </div>
+    </main>
 
     <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
     <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
@@ -79,8 +103,8 @@
     <script src="YOUR_JAVASCRIPT_HERE.js"></script>
     <script src="lib/game_logic.test.js"></script>
     <script>
-      mocha.checkLeaks();
-      mocha.run();
+      // mocha.checkLeaks();
+      // mocha.run();
     </script>
   </body>
 </html>
