@@ -16,7 +16,6 @@ const hero = {
 const displayStats = person => {
   const nameValue = document.getElementById("t1");
   nameValue.innerHTML = person.name;
-  //console.log(person.newName)
   const healthValue = document.getElementById("t2");
   healthValue.innerHTML = person.health;
 
@@ -60,7 +59,18 @@ const heroName = person => {
 };
 
 displayStats(hero);
+//enemy
+const witcher = {
+  health: 3
+};
 
-//setTimeout(heroName(hero), 10000);
+// Damage to enemy from hero
 
-//displayStats(hero);
+const doDamage = (person, to) => {
+  to.health -= person.weapon.damage;
+  if (to.health <= 0) {
+    alert("YOU WIN!");
+    const element = document.getElementById("enemy");
+    element.parentNode.removeChild(element);
+  }
+};

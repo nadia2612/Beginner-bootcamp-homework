@@ -9,13 +9,13 @@
   <body>
     <!-- 👍 YOUR HTML HERE 👍 -->
     <main>
-      <section class="comment">
+      <section class="heroName">
         <h3>Your hero name:</h3>
       </section>
       <form onsubmit="heroName(hero); return false">
         <div class="formSection">
-          <label for="name" placeholder="Your hero name"></label>
-          <input type="text" id="name" />
+          <label for="name"></label>
+          <input type="text" placeholder=" Name" id="name" />
         </div>
         <div class="button">
           <button type="default">Submit</button>
@@ -39,6 +39,13 @@
           onclick="equipWeapon(hero)"
           src="/img/IMGBIN_deathstroke-deadpool-spider-man-chibi-drawing-png_sCyyhC50.png"
         />
+        <!-- just for fun  <marquee direction="down" width="400" height="500" behavior="alternate"> -->
+        <img
+          id="enemy"
+          onclick="doDamage(hero,witcher)"
+          src="/img/IMGBIN_the_witcher_3_wild_hunt_geralt.png"
+        />
+        <!-- </marquee> -->
       </section>
 
       <div id="stats">
@@ -103,8 +110,6 @@
     <script src="YOUR_JAVASCRIPT_HERE.js"></script>
     <script src="lib/game_logic.test.js"></script>
     <script>
-      // mocha.checkLeaks();
-      // mocha.run();
     </script>
   </body>
 </html>
